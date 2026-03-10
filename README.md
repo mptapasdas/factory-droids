@@ -6,16 +6,22 @@ Personal [Factory](https://factory.ai) droid collection for Spring Boot developm
 
 **macOS / Linux:**
 ```bash
-mkdir -p ~/.factory && git clone https://github.com/mptapasdas/factory-droids.git ~/.factory/droids
+mkdir -p ~/.factory/droids && cd ~/.factory/droids && \
+git init && git remote add origin https://github.com/mptapasdas/factory-droids.git && \
+git fetch origin && git checkout -f origin/main -- . && \
+echo "Droids installed to ~/.factory/droids/"
 ```
 
 **Windows (PowerShell):**
 ```powershell
-New-Item -ItemType Directory -Force -Path "$HOME\.factory" | Out-Null
-git clone https://github.com/mptapasdas/factory-droids.git "$HOME\.factory\droids"
+New-Item -ItemType Directory -Force -Path "$HOME\.factory\droids" | Out-Null
+Set-Location "$HOME\.factory\droids"
+git init; git remote add origin https://github.com/mptapasdas/factory-droids.git
+git fetch origin; git checkout -f origin/main -- .
+Write-Host "Droids installed to $HOME\.factory\droids\"
 ```
 
-To update later, just `git pull` from inside `~/.factory/droids`.
+This works whether the directory is empty or already has files -- existing droids with the same name are overwritten, and any other files are left untouched. To update later, run `git fetch origin && git checkout -f origin/main -- .` from inside `~/.factory/droids`.
 
 ## Droids
 
