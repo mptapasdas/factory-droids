@@ -6,21 +6,16 @@ Personal [Factory](https://factory.ai) droid collection for Spring Boot developm
 
 **macOS / Linux:**
 ```bash
-git clone https://github.com/mptapasdas/factory-droids.git /tmp/factory-droids-install && \
-mkdir -p ~/.factory/droids && \
-cp /tmp/factory-droids-install/*.md ~/.factory/droids/ && \
-rm -rf /tmp/factory-droids-install && \
-echo "Droids installed to ~/.factory/droids/"
+mkdir -p ~/.factory && git clone https://github.com/mptapasdas/factory-droids.git ~/.factory/droids
 ```
 
 **Windows (PowerShell):**
 ```powershell
-git clone https://github.com/mptapasdas/factory-droids.git "$env:TEMP\factory-droids-install"
-New-Item -ItemType Directory -Force -Path "$HOME\.factory\droids" | Out-Null
-Copy-Item "$env:TEMP\factory-droids-install\*.md" "$HOME\.factory\droids\"
-Remove-Item "$env:TEMP\factory-droids-install" -Recurse -Force
-Write-Host "Droids installed to $HOME\.factory\droids\"
+New-Item -ItemType Directory -Force -Path "$HOME\.factory" | Out-Null
+git clone https://github.com/mptapasdas/factory-droids.git "$HOME\.factory\droids"
 ```
+
+To update later, just `git pull` from inside `~/.factory/droids`.
 
 ## Droids
 
